@@ -11,7 +11,7 @@
   - picture_url
 
 ## DB schema
-![DB schema](https://www.dropbox.com/s/yz5iu594yvl2qfs/beyond-crud-livecode.png?dl=0)
+![DB schema](https://www.dropbox.com/s/yz5iu594yvl2qfs/beyond-crud-livecode.png?dl=1)
 
 # User stories
 - ✅ As a user I can see one garden's plants
