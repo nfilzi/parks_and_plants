@@ -1,24 +1,23 @@
-# README
+# Schema DB
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+gardens
+  - name
+  - banner_picture_url
+plants
+  - garden_id (link to primary key of one specific garden)
+  - name
+  - picture_url
+  BONUS
+  - archived (boolean)
 
-Things you may want to cover:
+# User stories
+- As a user I can see one garden's plants
+- As a user I can add a plant in a garden
+- As a user I can delete a plant
 
-* Ruby version
+BONUS
+- As a user I can archive a plant
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## TODO after livecode
+! Send link to Bootstrap variables

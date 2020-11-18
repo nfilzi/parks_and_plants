@@ -1,7 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+puts "Cleaning DB.."
+Garden.destroy_all
+
+garden1 = Garden.create(
+  name:               "Nantes - Jardin des Plantes",
+  banner_picture_url: "https://www.my-loire-valley.com/wp-content/uploads/2018/05/Claude_Ponti_au_jardin_des_plantes_de_nantesccJP-Dalbera.jpg"
+)
+garden2 = Garden.create(
+  name:               "Nantes - Parc de Procé",
+  banner_picture_url: "https://jardins.nantes.fr/N/Image/RSoc/Photo/Parc-de-Proce-nantes.jpg"
+)
+
+puts "Seeds done!"
