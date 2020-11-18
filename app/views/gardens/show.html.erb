@@ -1,0 +1,35 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @garden.banner_picture_url %>);">
+  <div class="container p-5">
+    <h1><%= @garden.name %></h1>
+    <% if @garden.plants.any? %>
+      <div class="banner-spotlight banner-spotlight-right banner-spotlight-success">
+        <strong><%= @garden.plants.count %> plants</strong> growing strong here 💪
+      </div>
+    <% else %>
+      <div class="banner-spotlight banner-spotlight-right banner-spotlight-warning" role="alert">
+        <span>There are <strong>no plants</strong> yet 😢</span>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="d-flex mt-2 p-5 align-items-top">
+  <div class="cards mr-3 flex-grow-1">
+    <% @garden.plants.each do |plant| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= plant.picture_url %>)">
+        <%= plant.name %>
+
+        <%= link_to plant_path(plant), method: :delete, class: 'remove-link', data: {confirm: 'Are you sure you want to remove this plant from the garden?'} do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <%= simple_form_for([@garden, @plant], html: { class: 'flex-grow-1' }) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :picture_url %>
+
+    <%= f.button :submit, class: 'btn btn-success float-right' %>
+  <% end %>
+</div>
+

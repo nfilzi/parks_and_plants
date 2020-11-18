@@ -1,1 +1,13 @@
-<h1>Welcome to Gardens & Plants application</h1>
+<div class="container mt-5">
+  <h1>Welcome to Gardens & Plants application</h1>
+
+  <div class="cards mt-5 flex-grow-1">
+    <% @gardens.each do |garden| %>
+      <%= link_to garden_path(garden) do %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= garden.banner_picture_url %>)">
+          <%= garden.name %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
